@@ -14,11 +14,14 @@ public class StateManager {
 
 	public StateManager() {
 		States = new Stack<>();
-		GameState IntialState = new MainMenuState(Rend, this);
-		States.push(IntialState);
+        GameState InitialState;
+        //TODO Initialize InitialState Variable with the first state of the game. Eg.
+		//InitialState = new MainMenuState(Rend, this);
+        InitialState
+		States.push(InitialState);
 		Rend = new Renderer(this);
 		Panel = new GamePanel(this);
-		Panel.addMouseListener(IntialState);
+		Panel.addMouseListener(InitialState);
 		Rend.SetGamePanel(Panel);
 		Rend.RepackFrame();
 	}
